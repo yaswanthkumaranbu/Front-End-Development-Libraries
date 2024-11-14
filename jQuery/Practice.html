@@ -20,12 +20,38 @@
 
     <script>
       $(document).ready(function () {
-        $("button").addClass("animate__animated animate__bounce");
-        $(".well").addClass("animate__animated animate__shakeX");
+        $("button").addClass("animate__animated animate__bounce");   // Animate.css
+        $(".well").addClass("animate__animated animate__shakeX");    // Animate.css
         $("#target1").css("color", "red");
 
         // Changing html tag using .html()
         $("#target4").html("<em>#target4<em>");
+
+        // Remove html element using jQuery
+        $("#target4").remove();
+
+        // Move html element from another html element
+        $('#target2').appendTo("#right-well");
+
+        // Clone html element to another html element
+        $("#target5").clone().appendTo("#left-well");
+
+        // parent() used to access the parent of a child html element
+        $("#target1").parent().css("background-color","red");
+
+        // children() used to access the children of selected html element
+        $("#right-well").children().css("color","orange");
+
+        // target is a class within which the nth element is referred to add class
+        $(".target:nth-child(2)").addClass("animated bounce");
+
+        //even positioned elements are targeted within the class
+        $(".target:even").addClass("shake");
+
+
+
+
+
       });
     </script>
 
